@@ -76,7 +76,29 @@ nav a:hover {
   margin: 30px 0;
   flex-wrap: wrap;
 }
+.intro-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
 
+.subtitle {
+  font-size: 24px;
+  font-weight: 500;
+  display: block;
+  margin-top: 10px;
+  color: #333;
+}
+
+.intro-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto;
+}
 .tab {
   padding: 12px 25px;
   font-size: 17px;
@@ -200,6 +222,19 @@ nav a:hover {
 </nav>
 
 <section id="home" class="active">
+<div class="intro-content">
+    <h2 class="intro-title">
+      Network Traffic Visualization Coupled with Convolutional Neural Networks for Enhanced IoT Botnet Detection <br>
+    </h2>
+    <p class="intro-text">
+      The Internet of Things (IoT) is revolutionizing industries, but its widespread adoption has also introduced
+      significant security risks. IoT botnets—malicious networks of compromised devices—are increasingly used in
+      cyberattacks. Our project addresses this challenge by combining network traffic visualization with Convolutional
+      Neural Networks (CNNs) to detect and mitigate botnet threats in real-time, providing enhanced protection for IoT
+      ecosystems.
+    </p>
+  </div>
+</section>
   <div class="section-tabs">
     <div class="tab active" onclick="switchTab(this, 'pages/traffic.html')">Traffic Analysis</div>
     <div class="tab" onclick="switchTab(this, 'pages/cnn.html')">CNN</div>
