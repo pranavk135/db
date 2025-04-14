@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traffic Analysis Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f6f7fb;
+      color: #2c3e50;
+    }
+    header {
+      background-color: #ffffff;
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .stat-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+    .stat-title {
+      font-size: 1rem;
+      color: #64748b;
+      margin-bottom: 0.5rem;
+    }
+    .stat-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .botnet { color: #e11d48; }
+    .normal { color: #10b981; }
+
+    .feature-section {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+    .feature-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+    .report-content {
+      font-family: monospace;
+      font-size: 0.9rem;
+      background: #f9fafb;
+      padding: 1rem;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      background-color: #1e293b;
+      color: white;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Network Traffic Analysis</h1>
+    <a href="D:/6th sem project/final/db/sample/output_analysis/dashboard.html" style="text-decoration: none; background: #0f172a; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600;">Go to Dashboard</a>
+  </header>
+
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-title">Total Records</div>
+        <div class="stat-value" id="totalRecords">10000</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Botnet Traffic</div>
+        <div class="stat-value botnet" id="botnetCount">5031</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Normal Traffic</div>
+        <div class="stat-value normal" id="normalCount">4969</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Botnet Ratio</div>
+        <div class="stat-value botnet" id="botnetRatio">50.31%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Normal Ratio</div>
+        <div class="stat-value normal" id="normalRatio">49.69%</div>
+      </div>
+    </div>
+
+    <div class="feature-section">
+      <h2>Feature Statistics</h2>
+      <div class="report-content" id="featureStats">
+feature1      feature2      feature3<br>count  10000.000000  10000.000000  10000.000000<br>mean       5.012890      5.036600      5.025670<br>std        2.876439      2.873539      2.881556<br>min        0.000000      0.000000      0.000000<br>25%        2.500000      2.600000      2.600000<br>50%        5.000000      5.000000      4.900000<br>75%        7.500000      7.500000      7.600000<br>max       10.000000     10.000000     10.000000<br>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    PROJECT BY PRANAV, KUSHAL, HARI, DATTA | 2025
+  </footer>
+
+</body>
+</html>

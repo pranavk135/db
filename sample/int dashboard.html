@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -84,14 +83,6 @@ nav a:hover {
   line-height: 1.4;
 }
 
-.subtitle {
-  font-size: 24px;
-  font-weight: 500;
-  display: block;
-  margin-top: 10px;
-  color: #333;
-}
-
 .intro-text {
   font-size: 18px;
   line-height: 1.8;
@@ -158,54 +149,111 @@ nav a:hover {
       color: #666;
       font-size: 14px;
     }
+    .animated-login {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f2f6ff, #ffffff);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
     .login-box {
+      position: relative;
+      width: 100%;
       max-width: 400px;
-      margin: 100px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      background: #fff;
+      padding: 50px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      animation: slide-in 0.8s ease;
+    }
+
+    .login-box .content h2 {
+      color: #3A506B;
       text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
     }
-    .login-box img {
-      width: 80px;
-      margin-bottom: 20px;
+
+    .login-box .form .inputBox {
+      position: relative;
+      margin-bottom: 25px;
     }
-    .login-box input {
+
+    .login-box .form .inputBox input {
       width: 100%;
-      padding: 14px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-    .login-box button {
-      width: 100%;
-      background: var(--primary-color);
-      color: white;
       padding: 12px;
       font-size: 16px;
-      border: none;
+      border: 1px solid #ccc;
+      background: transparent;
       border-radius: 8px;
-      font-weight: bold;
+      outline: none;
+    }
+
+    .login-box .form .inputBox i {
+      position: absolute;
+      top: -12px;
+      left: 12px;
+      background: #fff;
+      font-size: 13px;
+      color: #555;
+      padding: 0 5px;
+    }
+
+    .login-box .links {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .login-box .links a {
+      color: #3A506B;
+      text-decoration: none;
+    }
+
+    .login-box .inputBox input[type="button"] {
+      background: #3A506B;
+      color: #fff;
+      border: none;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
-    .login-box button:hover {
-      background: #0f1f6b;
+
+    .login-box .inputBox input[type="button"]:hover {
+      background: #1e2a3a;
     }
-  </style>
+
+    @keyframes slide-in {
+      from { transform: translateY(30px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+</style>
 </head>
 <body>
-
-<div class="login-page active">
-  <div class="login-box">
-    <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="User Icon">
-    <h2>Welcome to IoT Botnet Detection</h2>
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="login()">Login</button>
-  </div>
-</div>
+  <section class="login-page active">
+    <div class="login-box">
+      <div class="content">
+        <h2>Sign In</h2>
+        <div class="form">
+          <div class="inputBox">
+            <input type="text" id="username" required>
+            <i>Username</i>
+          </div>
+          <div class="inputBox">
+            <input type="password" id="password" required>
+            <i>Password</i>
+          </div>
+          <div class="links">
+            <a href="#">Forgot Password</a>
+            <a href="#">Signup</a>
+          </div>
+          <button onclick="login()">Login</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <div class="main-page">
  <nav>
@@ -222,42 +270,42 @@ nav a:hover {
 </nav>
 
 <section id="home" class="active">
-<div class="intro-content">
+  <div class="intro-content">
     <h2 class="intro-title">
-      Network Traffic Visualization Coupled with Convolutional Neural Networks for Enhanced IoT Botnet Detection <br>
+      Network Traffic Visualization Coupled with Convolutional Neural Networks for Enhanced IoT Botnet Detection
     </h2>
     <p class="intro-text">
       The Internet of Things (IoT) is revolutionizing industries, but its widespread adoption has also introduced
       significant security risks. IoT botnets—malicious networks of compromised devices—are increasingly used in
-      cyberattacks. Our project addresses this challenge by combining network traffic visualization with Convolutional
-      Neural Networks (CNNs) to detect and mitigate botnet threats in real-time, providing enhanced protection for IoT
-      ecosystems.
+      cyberattacks.Explore how our system blends advanced visualization, deep learning, and intuitive interfaces to secure IoT networks.
     </p>
   </div>
-</section>
+
   <div class="section-tabs">
-    <div class="tab active" onclick="switchTab(this, 'pages/traffic.html')">Traffic Analysis</div>
-    <div class="tab" onclick="switchTab(this, 'pages/cnn.html')">CNN</div>
-    <div class="tab" onclick="switchTab(this, 'pages/data.html')">Data Generation</div>
-    <div class="tab" onclick="switchTab(this, 'pages/visualization.html')">Visualization</div>
+    <div class="tab active" onclick="switchTab(this, 'D:/6th sem project/final/db/sample/home_pages/network.html')">Traffic Visualization</div>
+    <div class="tab" onclick="switchTab(this, 'D:/6th sem project/final/db/sample/home_pages/cnn.html')">CNN Integration</div>
+    <div class="tab" onclick="switchTab(this, 'D:/6th sem project/final/db/sample/home_pages/botnet.html')">Botnet Detection</div>
+    <div class="tab" onclick="switchTab(this, 'D:/6th sem project/final/db/sample/home_pages/analysis.html')">Data Analysis</div>
+    <div class="tab" onclick="switchTab(this, 'D:/6th sem project/final/db/sample/home_pages/interface.html')">User Interface</div>
+    <div class="tab" onclick="switchTab(this, 'D:/6th sem project/final/db/sample/home_pages/generation.html')">Data Generation</div>
   </div>
 
   <div class="iframe-wrapper">
-    <iframe id="homeframe" src="pages/traffic.html"></iframe>
+    <iframe id="homeframe" src="D:/6th sem project/final/db/sample/home_pages/network.html"></iframe>
   </div>
 </section>
 
-  <section id="dashboard">
-    <h2>Dashboard</h2>
-    <div class="iframe-wrapper">
-      <iframe src="traffic_analysis_report.html"></iframe>
-    </div>
-  </section>
+<section id="dashboard">
+  <h2>Dashboard</h2>
+  <div class="iframe-wrapper">
+    <iframe src="D:/6th sem project/final/db/sample/output_analysis/dashboard.html" onerror="this.parentElement.innerHTML='<p style=\'color:red;\'>Failed to load traffic analysis report. Make sure the file exists at output_analysis/traffic_analysis_report.html</p>'"></iframe>
+  </div>
+</section>
 
   <section id="analysis">
     <h2>Analysis</h2>
     <div class="iframe-wrapper">
-      <iframe src="pages/analysis.html"></iframe>
+      <iframe src="D:/6th sem project/final/db/sample/traffic_analysis_report.html"></iframe>
     </div>
   </section>
 
@@ -269,35 +317,97 @@ nav a:hover {
   </section>
 
   <section id="about">
-    <h2>About the Team</h2>
-    <div class="grid-2">
-      <div class="bio-card">
-        <img src="https://via.placeholder.com/100" alt="Pranav K">
-        <h3>Pranav K</h3>
-        <p>Project Lead</p>
-        <p>pranavk@email.com<br>+91-98765-43210</p>
+    <div style="max-width: 1100px; margin: auto; padding: 40px 20px;">
+      
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h2 class="intro-title" style="font-size: 36px; color: #2d2d2d;">Who We Are</h2>
+        <p class="intro-text" style="font-size: 18px; max-width: 800px; margin: auto;">
+          We are a group of driven and curious final-year Computer Science diploma students from The Oxford Polytechnic. With a shared vision to explore innovation in cybersecurity, we took on a project to make a real-world impact:
+          <br><br>
+          <strong style="font-size: 20px; color: var(--primary-color);">“Network Traffic Visualization Coupled with Convolutional Neural Networks for Enhanced IoT Botnet Detection.”</strong>
+        </p>
       </div>
-      <div class="bio-card">
-        <img src="https://via.placeholder.com/100" alt="Jai Kushal C">
-        <h3>Jai Kushal C</h3>
-        <p>Network Analyst</p>
-        <p>jaikushal@email.com<br>+91-98765-12345</p>
+  
+      <div class="grid-2" style="gap: 60px; align-items: center; margin-bottom: 80px;">
+        <div>
+          <h3 style="font-size: 24px; color: var(--primary-color); margin-bottom: 20px;">Our Mission</h3>
+          <p class="intro-text">
+            With the exponential growth of IoT devices comes a growing threat—botnets. Our mission was to enhance IoT security using intelligent, real-time solutions. We combined data visualization with Convolutional Neural Networks (CNNs) to detect malicious traffic before it becomes a breach.
+          </p>
+        </div>
+        <div>
+          <img src="D:/6th sem project/final/db/sample/about/mission.jpg" alt="Mission" style="width:100%; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.08);">
+        </div>
       </div>
-      <div class="bio-card">
-        <img src="https://via.placeholder.com/100" alt="Datta Sai">
-        <h3>Kunapuli Datta Sai</h3>
-        <p>Back-End Developer</p>
-        <p>dattasai@email.com<br>+91-99999-88888</p>
+  
+      <div class="grid-2" style="gap: 60px; align-items: center; margin-bottom: 80px;">
+        <div>
+          <img src="D:/6th sem project/final/db/sample/about/workflow.jpg" alt="Workflow" style="width:100%; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.08);">
+        </div>
+        <div>
+          <h3 style="font-size: 24px; color: var(--primary-color); margin-bottom: 20px;">What We Built</h3>
+          <p class="intro-text">
+            - A custom interactive dashboard to visualize IoT traffic patterns<br>
+            - A trained CNN model capable of identifying botnet activity<br>
+            - A modular and scalable architecture for real-world deployment<br>
+            - A unified vision of practical innovation in cybersecurity
+          </p>
+        </div>
       </div>
-      <div class="bio-card">
-        <img src="https://via.placeholder.com/100" alt="Hari Raghavan M">
-        <h3>Hari Raghavan M</h3>
-        <p>Visualization Expert</p>
-        <p>hariraghavan@email.com<br>+91-91234-56789</p>
+  
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h3 class="intro-title" style="font-size: 28px;">Our Stack</h3>
+        <p class="intro-text" style="max-width: 700px; margin: auto;">
+          <strong>Frontend:</strong> HTML, CSS, JavaScript<br>
+          <strong>Visualization:</strong> Chart.js, D3.js<br>
+          <strong>Backend:</strong> Python, Flask<br>
+          <strong>Machine Learning:</strong> TensorFlow, Keras<br>
+          <strong>Tools:</strong> Wireshark, VS Code, GitHub
+        </p>
+      </div>
+  
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h3 class="intro-title" style="font-size: 28px;">Where We’re Headed</h3>
+        <p class="intro-text" style="max-width: 700px; margin: auto;">
+          We're aiming to expand our model’s accuracy with real-world datasets, bring our system to live IoT environments, and scale it into a cloud-based security platform. The journey doesn't end here—it’s just the beginning.
+        </p>
+      </div>
+  
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h2 class="intro-title" style="font-size: 30px;">Meet the Team</h2>
+        <p class="intro-text">We are creators, coders, thinkers, and problem-solvers.</p>
+      </div>
+  
+      <div class="grid-2" style="gap: 30px;">
+        <div class="bio-card">
+          <img src="D:/6th sem project/final/db/sample/profiles/pranav.jpg" alt="Pranav K">
+          <h3>Pranav K</h3>
+          <p>Project Lead</p>
+          <p>pranavkonda135@gmail.com<br>+91-63627-95090</p>
+        </div>
+        <div class="bio-card">
+          <img src="D:/6th sem project/final/db/sample/profiles/kushal.jpg" alt="Jai Kushal C">
+          <h3>Jai Kushal C</h3>
+          <p>Network Analyst</p>
+          <p>kushalacharc022006@gmail.com<br>+91-74835-91263</p>
+        </div>
+        <div class="bio-card">
+          <img src="D:/6th sem project/final/db/sample/profiles/datta.jpg" alt="Datta Sai">
+          <h3>Kunapuli Datta Sai</h3>
+          <p>Back-End Developer</p>
+          <p>kunapulidatta@gmail.com<br>+91-99802-09433</p>
+        </div>
+        <div class="bio-card">
+          <img src="D:/6th sem project/final/db/sample/profiles/hari.jpg" alt="Hari Raghavan M">
+          <h3>Hari Raghavan M</h3>
+          <p>Visualization Expert</p>
+          <p>hariraghavan009@gmail.com<br>+91-76248-59464</p>
+        </div>
       </div>
     </div>
   </section>
-</div>
+  
+  
 
 <script>
   function login() {
