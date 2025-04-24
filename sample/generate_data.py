@@ -11,4 +11,4 @@ def generate_data(num_records, filename):
             file.write(f"{feature1}\t{feature2}\t{feature3}\t{label}\n")
 
 if __name__ == "__main__":
-    generate_data(10000, 'network_traffic_data.txt')
+    generate_data(100, 'network_traffic_data.txt')

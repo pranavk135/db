@@ -70,7 +70,7 @@ plt.savefig(os.path.join(output_dir, 'scatter_plot.png'))
 plt.close()
 
 pd.plotting.scatter_matrix(pd.DataFrame(X_train.reshape(X_train.shape[0], X_train.shape[1]), 
-                                        columns=['feature1', 'feature2', 'feature3']), figsize=(10, 10), diagonal='kde')
+columns=['feature1', 'feature2', 'feature3']), figsize=(10, 10), diagonal='kde')
 plt.suptitle('Pair Plot of Features')
 plt.savefig(os.path.join(output_dir, 'pair_plot.png'))
 plt.close()

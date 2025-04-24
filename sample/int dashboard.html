@@ -128,15 +128,18 @@ nav a:hover {
       gap: 40px;
     }
     .bio-card {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    min-width: 250px;
+    flex: 0 0 auto;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
     }
     .bio-card img {
       width: 100px;
-      height: 100px;
+      height: auto;
       object-fit: cover;
       border-radius: 50%;
       margin-bottom: 15px;
@@ -149,15 +152,18 @@ nav a:hover {
       color: #666;
       font-size: 14px;
     }
+    .bio-card:hover {
+    transform: scale(1.03);
+    }
     .animated-login {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #f2f6ff, #ffffff);
+      background: linear-gradient(135deg, #c6c8cc, #ffffff);
       min-height: 100vh;
       padding: 40px 20px;
     }
-
+    
     .login-box {
       position: relative;
       width: 100%;
@@ -229,11 +235,51 @@ nav a:hover {
       from { transform: translateY(30px); opacity: 0; }
       to   { transform: translateY(0); opacity: 1; }
     }
+    .scroll-container {
+    overflow-x: auto;
+    padding: 10px;
+    display: flex;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    padding: 10px 40px;
+    }
+    .scroll-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    }
+    .scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #000000cc;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+    }
+  .scroll-btn:hover {
+    background-color: #333;
+    }
+  .scroll-btn.left {
+    left: 10px;
+    }
+  .scroll-btn.right {
+    right: 10px;
+    }
+
 </style>
 </head>
 <body>
   <section class="login-page active">
-    <div class="login-box">
+    <div class="animated-login">
+      <div class ="login-box">
       <div class="content">
         <h2>Sign In</h2>
         <div class="form">
@@ -245,13 +291,10 @@ nav a:hover {
             <input type="password" id="password" required>
             <i>Password</i>
           </div>
-          <div class="links">
-            <a href="#">Forgot Password</a>
-            <a href="#">Signup</a>
-          </div>
-          <button onclick="login()">Login</button>
+          <input type="button" value="Login" onclick="login()">
         </div>
       </div>
+    </div>
     </div>
   </section>
 
@@ -263,7 +306,7 @@ nav a:hover {
       <a href="#" onclick="showSection('home')">Home</a>
       <a href="#" onclick="showSection('dashboard')">Dashboard</a>
       <a href="#" onclick="showSection('analysis')">Analysis</a>
-      <a href="#" onclick="showSection('example')">Real Example</a>
+      <a href="#" onclick="showSection('example')">Interactive Example</a>
       <a href="#" onclick="showSection('about')">About</a>
     </div>
   </div>
@@ -271,7 +314,7 @@ nav a:hover {
 
 <section id="home" class="active">
   <div class="intro-content">
-    <h2 class="intro-title">
+    <h2 class="intro-title" style="text-align:center;">
       Network Traffic Visualization Coupled with Convolutional Neural Networks for Enhanced IoT Botnet Detection
     </h2>
     <p class="intro-text">
@@ -310,7 +353,7 @@ nav a:hover {
   </section>
 
   <section id="example">
-    <h2>Real Example</h2>
+    <h2>Interactive Example</h2>
     <div class="iframe-wrapper">
       <iframe src="mod 1.html"></iframe>
     </div>
@@ -336,13 +379,13 @@ nav a:hover {
           </p>
         </div>
         <div>
-          <img src="D:/6th sem project/final/db/sample/about/mission.jpg" alt="Mission" style="width:100%; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.08);">
+          <img src="D:/6th sem project/final/db/sample/pics/mission.png" alt="Mission" style="width:100%; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.08);">
         </div>
       </div>
   
       <div class="grid-2" style="gap: 60px; align-items: center; margin-bottom: 80px;">
         <div>
-          <img src="D:/6th sem project/final/db/sample/about/workflow.jpg" alt="Workflow" style="width:100%; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.08);">
+          <img src="D:/6th sem project/final/db/sample/pics/workflow.png" alt="Workflow" style="width:100%; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.08);">
         </div>
         <div>
           <h3 style="font-size: 24px; color: var(--primary-color); margin-bottom: 20px;">What We Built</h3>
@@ -377,8 +420,10 @@ nav a:hover {
         <h2 class="intro-title" style="font-size: 30px;">Meet the Team</h2>
         <p class="intro-text">We are creators, coders, thinkers, and problem-solvers.</p>
       </div>
-  
-      <div class="grid-2" style="gap: 30px;">
+
+      <div class="scroll-wrapper">
+        <button class="scroll-btn left" onclick="scrollLeft()">&#10094;</button>
+      <div class="scroll-container" id="cardScroll">
         <div class="bio-card">
           <img src="D:/6th sem project/final/db/sample/profiles/pranav.jpg" alt="Pranav K">
           <h3>Pranav K</h3>
@@ -403,6 +448,7 @@ nav a:hover {
           <p>Visualization Expert</p>
           <p>hariraghavan009@gmail.com<br>+91-76248-59464</p>
         </div>
+        <button class="scroll-btn right" onclick="scrollRight()">&#10095;</button>
       </div>
     </div>
   </section>
@@ -437,6 +483,13 @@ function switchTab(element, page) {
 
     // Update iframe content
     document.getElementById('homeframe').src = page;
+  }
+  function scrollLeft() {
+    document.getElementById("cardScroll").scrollBy({ left: -300, behavior: 'smooth' });
+  }
+
+  function scrollRight() {
+    document.getElementById("cardScroll").scrollBy({ left: 300, behavior: 'smooth' });
   }
 </script>
 
