@@ -270,7 +270,7 @@ html_content = """
 <body>
   <header>
     <h1>Network Traffic Analysis</h1>
-    <a href="D:/6th sem project/final/db/sample/output_analysis/dashboard.html" style="text-decoration: none; background: #0f172a; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600;">Go to Dashboard</a>
+    <a href="output_analysis/dashboard.html" style="text-decoration: none; background: #0f172a; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600;">Go to Dashboard</a>
   </header>
 
   <div class="container">
@@ -361,31 +361,31 @@ with open(dashboard_path, 'w') as f:
     <body>
         <h1>Network Traffic Visualizations</h1>
         <h2>Line Plot</h2>
-        <img src="D:/6th sem project/final/db/sample/output_analysis/line_plot.png" alt="Line Plot">
+        <img src="line_plot.png" alt="Line Plot">
 
         <h2>Histogram</h2>
-        <img src="D:/6th sem project/final/db/sample/output_analysis/histogram.png" alt="Histogram">
+        <img src="histogram.png" alt="Histogram">
 
         <h2>Boxplot</h2>
-        <img src="D:/6th sem project/final/db/sample/output_analysis/boxplot.png" alt="Boxplot">
+        <img src="boxplot.png" alt="Boxplot">
 
         <h2>Scatter Plot</h2>
-        <img src="D:/6th sem project/final/db/sample/output_analysis/scatter_plot.png" alt="Scatter">
+        <img src="scatter_plot.png" alt="Scatter">
 
         <h2>Pair Plot</h2>
-        <img src="D:/6th sem project/final/db/sample/output_analysis/pair_plot.png" alt="Pair Plot">
+        <img src="pair_plot.png" alt="Pair Plot">
 
         <h2>Heatmap</h2>
-        <img src="D:/6th sem project/final/db/sample/output_analysis/heatmap.png" alt="Heatmap">
+        <img src="heatmap.png" alt="Heatmap">
 
         <h2>Traffic Distribution Pie Chart</h2>
-        <img src="D:/6th sem project/final/db/sample/output_analysis/pie_chart.png" alt="Pie Chart">
+        <img src="pie_chart.png" alt="Pie Chart">
 
         <h2>Parallel Coordinates Plot</h2>
-        <img src="D:/6th sem project/final/db/sample/output_analysis/parallel_coordinates.png" alt="Parallel Coordinates">
+        <img src="parallel_coordinates.png" alt="Parallel Coordinates">
 
         <h2>Tree Map</h2>
-        <iframe src="D:/6th sem project/final/db/sample/output_analysis/treemap.html"></iframe>
+        <iframe src="treemap.html"></iframe>
 
         <h2>Model Accuracy</h2>
         <pre>{open(os.path.join(output_dir, 'model_metrics.txt')).read()}</pre>
@@ -393,6 +393,6 @@ with open(dashboard_path, 'w') as f:
     </html>
     """)
 
-dashboard_file = os.path.abspath("int dashboard.html")
+dashboard_file = os.path.abspath("int_dashboard.html")
 
-webbrowser.open("D:/6th sem project/final/db/sample/int dashboard.html")
+webbrowser.open("int_dashboard.html")
